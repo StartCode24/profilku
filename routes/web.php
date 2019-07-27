@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/integrasi', 'IntegrasiController@index')->name('home');
 Route::get('/', 'BerandaController@index')->name('beranda');
+Route::get('/userprofile', 'UserProfileController@index')->name('beranda');
 Route::get('/bantuan', 'BantuanController@index')->name('bantuan');
 
 Route::get('/home', 'PostController@homePage')->name('homepage');
