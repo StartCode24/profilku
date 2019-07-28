@@ -78,7 +78,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 @guest
-                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Masuk</a>
+                                <a class="nav-link" href="/login"><i class="fa fa-sign-in"></i> Masuk</a>
                                 @if (Route::has('register'))
                                 <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-users"></i> Daftar</a>
                                 @endif @else
