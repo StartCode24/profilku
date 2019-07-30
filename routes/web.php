@@ -21,6 +21,10 @@ Route::get('/integrasi', 'IntegrasiController@index')->name('home');
 Route::get('/', 'BerandaController@index')->name('beranda');
 Route::get('/userprofile', 'UserProfileController@index')->name('beranda');
 Route::get('/bantuan', 'BantuanController@index')->name('bantuan');
+Route::get('/register/email', 'Auth2\RegisterController2@registerEmail')->name('email');
+Route::get('/register/name', 'Auth2\RegisterController2@registerName')->name('name');
+Route::get('/register/photo', 'Auth2\RegisterController2@registerPhoto')->name('photo');
+Route::get('/register/location', 'Auth2\RegisterController2@registerLocation')->name('location');
 
 Route::get('/home', 'PostController@homePage')->name('homepage');
 

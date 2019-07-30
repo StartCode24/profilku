@@ -27,6 +27,12 @@ import Create from './components/Create.vue'
 import Read from './components/Read.vue'
 import Update from './components/Update.vue'
 
+import RegisterName from './components/auth/RegisterName.vue'
+import RegisterEmail from './components/auth/RegisterEmail.vue'
+import RegisterPhoto from './components/auth/RegisterPhoto.vue'
+import RegisterLocation from './components/auth/RegisterLocation.vue'
+
+
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 const routes = [
@@ -39,6 +45,10 @@ const routes = [
     { path: '/read/:id', component: Read, name:"readPost" },
     { path: '/:id/edit', component: Update, name:"editPost" },
     { path: '/create', component: Create },
+    { path: '/register/name', component: RegisterName },
+    { path: '/register/email', component: RegisterEmail },
+    { path: '/register/photo', component: RegisterPhoto },
+    { path: '/register/location', component: RegisterLocation },
     
   ]
 
