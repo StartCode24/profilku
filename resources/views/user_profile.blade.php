@@ -32,7 +32,28 @@
             float: left;
             width: 50%;
             height: 100%;
-            overflow-y: scroll;
+            /* overflow-y: scroll; */
+        }
+        /* width */
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 3px grey;
+        border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
         }
     </style>
 <body>
