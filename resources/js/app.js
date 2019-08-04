@@ -31,6 +31,9 @@ import RegisterName from './components/auth/RegisterName.vue'
 import RegisterEmail from './components/auth/RegisterEmail.vue'
 import RegisterPhoto from './components/auth/RegisterPhoto.vue'
 import RegisterLocation from './components/auth/RegisterLocation.vue'
+import RegisterInterests from './components/auth/RegisterInterests.vue'
+import RegisterRoles from './components/auth/RegisterRoles.vue'
+import RegisterSpotlight from './components/auth/RegisterSpotlight.vue'
 
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
@@ -46,9 +49,13 @@ const routes = [
     { path: '/:id/edit', component: Update, name:"editPost" },
     { path: '/create', component: Create },
     { path: '/register/name', component: RegisterName },
+    { path: '/register/emailStore', component: RegisterName },
     { path: '/register/email', component: RegisterEmail },
     { path: '/register/photo', component: RegisterPhoto },
     { path: '/register/location', component: RegisterLocation },
+    { path: '/register/interests', component: RegisterInterests },
+    { path: '/register/roles', component: RegisterRoles },
+    { path: '/register/spotlight', component: RegisterSpotlight },
     
   ]
 
