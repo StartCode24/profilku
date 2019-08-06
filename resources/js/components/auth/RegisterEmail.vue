@@ -10,7 +10,7 @@
             <h3 class="text-center">Sign up with your email</h3>
             <div class="form-group row">
                 <div class="col-md-12">
-                    <input id="email" type="email" placeholder="Enter Your Email Addres" class="form-control text-center " v-model="email" value="" required="required" autocomplete="email">
+                    <input id="email" name="email" type="email" placeholder="Enter Your Email Addres" class="form-control text-center " v-model="email" value="" required="required" autocomplete="email">
 
                 </div>
             </div>
@@ -18,7 +18,7 @@
 
             <div class="form-group row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary btn-block">
+                    <button type="submit" class="btn btn-primary btn-block">
                         Next
                     </button>
                 </div>
@@ -38,14 +38,26 @@ export default {
   },
   methods: {
     submitPost(){
-          this.errors = {};
-      axios.post('/register/emailStore', this.email).then(response => {
-        alert('Message sent!');
-      }).catch(error => {
-        if (error.response.status === 422) {
-          this.errors = error.response.data.errors || {};
-        }
-      });
+      //     this.errors = {};
+      // axios.post('/register/emailStore', this.email).then(response => {
+      //   alert('Message sent!');
+      // }).catch(error => {
+      //   if (error.response.status === 422) {
+      //     this.errors = error.response.data.errors || {};
+      //   }
+      // });
+     axios({
+      method: 'post',
+      url: 'http://localhost:8000/register/emailStore',
+      data: {
+        email: this.email  
+      }
+    })
+  .then(function (response) {
+    // alert("err"+JSON.stringify(response))
+     window.location = "http://localhost:8000/register/emailStore"
+  });
+
     }
   }
 }

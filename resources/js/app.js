@@ -49,7 +49,6 @@ const routes = [
     { path: '/:id/edit', component: Update, name:"editPost" },
     { path: '/create', component: Create },
     { path: '/register/name', component: RegisterName },
-    { path: '/register/emailStore', component: RegisterName },
     { path: '/register/email', component: RegisterEmail },
     { path: '/register/photo', component: RegisterPhoto },
     { path: '/register/location', component: RegisterLocation },

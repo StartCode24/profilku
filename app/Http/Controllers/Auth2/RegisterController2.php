@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Post;
 
 class RegisterController2 extends Controller
 {
@@ -25,15 +26,10 @@ class RegisterController2 extends Controller
            
     }
     public function registerEmailStore(Request $request)
+    
     {
-        $data = response()->json([$request->all()]);   
-        // if(count($data)==0){
-        //     return view('auth/registeremail');
-            
-        // }else{
-            return ($data);
-        // }  
-        // return $this->registerName();
+        Session::put('key', $request->all());
+        return Session::get('key');
         
     }
     public function registerName()

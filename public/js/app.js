@@ -1927,15 +1927,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submitPost: function submitPost() {
-      var _this = this;
-
-      this.errors = {};
-      axios.post('/register/emailStore', this.email).then(function (response) {
-        alert('Message sent!');
-      })["catch"](function (error) {
-        if (error.response.status === 422) {
-          _this.errors = error.response.data.errors || {};
+      //     this.errors = {};
+      // axios.post('/register/emailStore', this.email).then(response => {
+      //   alert('Message sent!');
+      // }).catch(error => {
+      //   if (error.response.status === 422) {
+      //     this.errors = error.response.data.errors || {};
+      //   }
+      // });
+      axios({
+        method: 'post',
+        url: 'http://localhost:8000/register/emailStore',
+        data: {
+          email: this.email
         }
+      }).then(function (response) {
+        // alert("err"+JSON.stringify(response))
+        window.location = "http://localhost:8000/register/emailStore";
       });
     }
   }
@@ -38691,6 +38699,7 @@ var render = function() {
                 staticClass: "form-control text-center ",
                 attrs: {
                   id: "email",
+                  name: "email",
                   type: "email",
                   placeholder: "Enter Your Email Addres",
                   value: "",
@@ -38748,9 +38757,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group row" }, [
       _c("div", { staticClass: "col-md-12" }, [
-        _c("button", { staticClass: "btn btn-primary btn-block" }, [
-          _vm._v("\n                        Next\n                    ")
-        ])
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary btn-block",
+            attrs: { type: "submit" }
+          },
+          [_vm._v("\n                        Next\n                    ")]
+        )
       ])
     ])
   }
@@ -80712,9 +80726,6 @@ var routes = [{
   component: _components_Create_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
 }, {
   path: '/register/name',
-  component: _components_auth_RegisterName_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
-}, {
-  path: '/register/emailStore',
   component: _components_auth_RegisterName_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
 }, {
   path: '/register/email',
